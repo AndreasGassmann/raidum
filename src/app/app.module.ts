@@ -20,6 +20,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Contacts } from '@ionic-native/contacts';
 import { TouchID } from '@ionic-native/touch-id';
 import { Deeplinks } from '@ionic-native/deeplinks';
+import { Keyboard } from '@ionic-native/keyboard';
 
 import { MaterialIconsModule } from 'ionic2-material-icons';
 import { EthereumProvider } from '../providers/ethereum/ethereum';
@@ -65,6 +66,7 @@ import { ApiServiceProvider } from '../providers/api-service/api-service';
     Contacts,
     TouchID,
     Deeplinks,
+    Keyboard,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     EthereumProvider,
     ApiServiceProvider
