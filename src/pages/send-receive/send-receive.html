@@ -1,15 +1,29 @@
-<ion-header>
-  <ion-navbar>
+<ion-header no-shadow no-border>
+  <ion-navbar color="transparent">
     <ion-title>Send &amp; Receive</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs, update any existing page or create new pages.
-  </p>
+<ion-content>
+  <ion-row class="background--color__gradient" padding-vertical>
+    <ion-col text-center padding-bottom ion-text color="white">
+      <h5 margin-bottom>MY BALANCE</h5>
+      <h1 no-margin>1450 <small>CHF</small></h1>
+      <h5 no-margin>5.021 <small>ETH</small></h5>
+    </ion-col>
+  </ion-row>
+  <ion-row padding-vertical margin-vertical>
+    <ion-col padding>
+      <button ion-button icon-left full round color="primary">
+        <ion-icon name="md-arrow-round-up"></ion-icon>
+        Send
+      </button>
+    </ion-col>
+    <ion-col padding>
+      <button ion-button icon-left full round color="secondary">
+        <ion-icon name="md-arrow-round-down"></ion-icon>
+        Request
+      </button>
+    </ion-col>
+  </ion-row>
 </ion-content>

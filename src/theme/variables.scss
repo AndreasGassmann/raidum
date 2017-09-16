@@ -34,12 +34,13 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #63E2FF,
-  secondary:  #B066FE,
+  primary:    #B066FE,
+  secondary:  #63E2FF,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  white:      #fff
+  white:      #fff,
+  transparent: transparent
 );
 
 
@@ -88,4 +89,4 @@ $colors: (
 @import "roboto";
 @import "noto-sans";
 
-$gradient: linear-gradient(-150deg, color($colors, primary) 0%, color($colors, secondary) 100%);
+$gradient: linear-gradient(-150deg, color($colors, secondary) 0%, color($colors, primary) 100%);
