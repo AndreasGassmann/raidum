@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { AuthPage } from '../pages/auth/auth';
 import { TransactionsPage } from '../pages/transactions/transactions';
 import { ProfilePage } from '../pages/profile/profile';
 import { SendReceivePage } from '../pages/send-receive/send-receive';
@@ -15,6 +16,7 @@ import { Contacts } from '@ionic-native/contacts';
 @NgModule({
   declarations: [
     MyApp,
+    AuthPage,
     TransactionsPage,
     ProfilePage,
     SendReceivePage,
@@ -27,6 +29,7 @@ import { Contacts } from '@ionic-native/contacts';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    AuthPage,
     TransactionsPage,
     ProfilePage,
     SendReceivePage,
