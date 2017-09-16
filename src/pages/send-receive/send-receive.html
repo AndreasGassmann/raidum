@@ -12,18 +12,36 @@
       <h5 no-margin>5.021 <small>ETH</small></h5>
     </ion-col>
   </ion-row>
-  <ion-row class="background--color__white height__full" padding-vertical >
-    <ion-col padding (click)="openEnterAmount()">
-      <button ion-button icon-left full round color="primary">
-        <ion-icon name="md-arrow-round-up"></ion-icon>
-        Send
-      </button>
-    </ion-col>
-    <ion-col padding>
-      <button ion-button icon-left full round color="secondary">
-        <ion-icon name="md-arrow-round-down"></ion-icon>
-        Request
-      </button>
-    </ion-col>
-  </ion-row>
+    <ion-row class="background--color__white height__full" padding align-items-center>
+      <ion-col text-center>
+          <button large margin-bottom ion-button icon-left full round color="primary" (click)="openEnterAmount()">
+            <ion-icon name="md-arrow-round-up"></ion-icon>
+            Send
+          </button>
+        <p padding>OR</p>
+        <button large margin-top ion-button icon-left full round color="secondary">
+          <ion-icon name="md-arrow-round-down"></ion-icon>
+          Request
+        </button>
+      </ion-col>
+    </ion-row>
 </ion-content>
+
+<ion-footer no-border no-shadow color="white">
+  <ion-navbar>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left full round color="white">
+          <ion-icon name="md-bluetooth"></ion-icon>
+          USE Bluetooth
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left full round color="white">
+          <ion-icon name="md-contract"></ion-icon>
+          Use NFC
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+</ion-footer>
