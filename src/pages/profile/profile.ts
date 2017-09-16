@@ -19,6 +19,7 @@ export class ProfilePage {
     options.hasPhoneNumber = true;
 
     this.contacts.find(fields, options).then((contacts) => {
+      console.log(contacts);
       this.myContacts = contacts.filter(c => c.phoneNumbers).map(c => {
         return {
           name: c.name.formatted,
@@ -26,11 +27,13 @@ export class ProfilePage {
           photo: c.photos ? c.photos[0].value : ''
         }
       });
+      console.log(this.myContacts);
     });
   }
 
   sanitizeImage(value) {
-    return this.sanitizer.bypassSecurityTrustUrl(value)
+    console.log(value.substr(77));
+    return this.sanitizer.bypassSecurityTrustUrl('file://' + value)
   }
 
 }

@@ -10,7 +10,7 @@
   <ion-list>
     <ion-list-header>Follow us on Twitter</ion-list-header>
     <ion-item *ngFor="let c of myContacts">
-      <img [src]="sanitizeImage(c.photo)" item-left /> {{c.name}} {{c.phoneNumber}}
+      <img [src]="sanitizeImage(c.photo)" item-left />{{c.name}} {{c.phoneNumber}}
     </ion-item>
   </ion-list>
 </ion-content>
