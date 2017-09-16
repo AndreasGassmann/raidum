@@ -1,10 +1,32 @@
 <ion-header no-shadow no-border>
   <ion-navbar color="transparent">
-    <ion-title>
-      Profile
-    </ion-title>
+    <ion-title>My Profile</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+  <ion-row class="background--color__gradient__cut" padding-vertical>
+    <ion-col text-center>
+      <img class="profile--img" src="/assets/img/profile-img.png">
+    </ion-col>
+  </ion-row>
+  <ion-row class="background--color__white height__full" padding-bottom>
+    <ion-col text-center>
+      <h5 no-margin>Andreas Gassmann</h5>
+      <p no-margin padding-bottom>+41 76 123 12 12</p>
+      <p><strong>0x829BD824B016326A401d083B33D092293333A830</strong></p>
+      <ion-row>
+        <ion-col text-center>
+          <button ion-button round color="primary">
+            Copy ETH Address
+          </button>
+          <button ion-button round color="primary">
+            Open ETHERSCAN
+          </button>
+        </ion-col>
+      </ion-row>
+      <img padding-top class="qr--code" src="/assets/img/qr-placeholder.png">
+    </ion-col>
+  </ion-row>
 </ion-content>
+

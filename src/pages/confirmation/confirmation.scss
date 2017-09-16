@@ -1,6 +1,6 @@
 page-confirmation {
   ion-content {
-    background-image: $gradient-sm;
+    background-image: linear-gradient(-150deg, #009245 0%, #FCEE21 100%);
   }
   .full--height {
     height: 100%;
@@ -9,5 +9,8 @@ page-confirmation {
     width: 48px;
     height: 48px;
     stroke: color($colors, white)!important;
+  }
+  .icon--success {
+    font-size: 3em;
   }
 }
