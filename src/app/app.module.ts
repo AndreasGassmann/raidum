@@ -18,6 +18,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Contacts } from '@ionic-native/contacts';
 import { TouchID } from '@ionic-native/touch-id';
 
+import { MaterialIconsModule } from 'ionic2-material-icons';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -33,7 +36,8 @@ import { TouchID } from '@ionic-native/touch-id';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    MaterialIconsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
