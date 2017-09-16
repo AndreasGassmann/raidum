@@ -4,10 +4,10 @@ import { Contacts, IContactFindOptions, ContactFindOptions, Contact, ContactFiel
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-  selector: 'page-contact',
-  templateUrl: 'contact.html'
+  selector: 'page-profile',
+  templateUrl: 'profile.html'
 })
-export class ContactPage {
+export class ProfilePage {
   myContacts: any;
 
   constructor(public navCtrl: NavController, private contacts: Contacts, private sanitizer: DomSanitizer) {
