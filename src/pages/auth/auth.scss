@@ -1,3 +1,12 @@
 page-auth {
+  ion-content {
+    background-image: $gradient;
 
+  }
+  .icon-size__lg {
+    font-size: 4em;
+  }
+  .height__full {
+    height: 100%;
+  }
 }
