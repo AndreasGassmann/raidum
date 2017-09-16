@@ -7,17 +7,4 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Already on CryptoPay</ion-list-header>
-    <ion-item *ngFor="let c of myContacts">
-      <ion-avatar item-start>
-        <img [src]="sanitizeImage(c.photo)">
-      </ion-avatar>
-      <h2>{{c.name}}</h2>
-      <p>{{c.phoneNumber}}</p>
-    </ion-item>
-  </ion-list>
-  <ion-list>
-    <ion-list-header>Other contacts</ion-list-header>
-  </ion-list>
 </ion-content>

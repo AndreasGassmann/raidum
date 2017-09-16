@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ConfirmationPage } from '../confirmation/confirmation';
 
 @Component({
   selector: 'page-send',
@@ -12,6 +13,10 @@ export class SendPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SendPage');
+  }
+
+  openConfirmation() {
+    this.navCtrl.push(ConfirmationPage);
   }
 
 }
