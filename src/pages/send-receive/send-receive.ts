@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { SendPage } from '../send/send';
+import { EnterAmountPage } from '../enter-amount/enter-amount';
 
 @Component({
   selector: 'page-send-receive',
@@ -12,7 +12,7 @@ export class SendReceivePage {
 
   }
 
-  openSend() {
-    this.navCtrl.push(SendPage);
+  openEnterAmount() {
+    this.navCtrl.push(EnterAmountPage);
   }
 }
