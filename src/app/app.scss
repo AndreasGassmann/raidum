@@ -15,22 +15,35 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+/* applies gradient to bg */
 .background--color__gradient {
   background-image: $gradient;
 }
+/* white bg color for ex  rows */
 .background--color__white {
   background-color: color($colors, white);
 }
-.height__full {
-  height:100vh;
-}
+/* light font weight for headings */
 .font--weight__light {
   font-weight: 300;
 }
+/* cuts the gradient in half */
 .background--color__gradient__cut {
   background: linear-gradient(to bottom right, transparent 0%, transparent 50%, color($colors, white, base) 50%, color($colors, white, base) 100%);
 
 }
+/* profile image border radius */
 .profile--img {
   border-radius: 100%;
+}
+
+/* fills the last row with white, allows to use the gradient consistently */
+page-send-receive, page-enter-amount, page-send, page-confirmation {
+  .scroll-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .height__full {
+    flex:1;
+  }
 }
