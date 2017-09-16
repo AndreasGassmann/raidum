@@ -14,4 +14,8 @@ export class ConfirmationPage {
     console.log('ionViewDidLoad ConfirmationPage');
   }
 
+  openHome() {
+    this.navCtrl.popToRoot();
+  }
+
 }
