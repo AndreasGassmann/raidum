@@ -13,14 +13,17 @@ import { SendPage } from '../pages/send/send';
 import { RecipientPage } from '../pages/recipient/recipient';
 import { OnboardingPage } from '../pages/onboarding/onboarding';
 import { TabsPage } from '../pages/tabs/tabs';
+import { HttpModule, Http } from "@angular/http";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Contacts } from '@ionic-native/contacts';
 import { TouchID } from '@ionic-native/touch-id';
+import { Deeplinks } from '@ionic-native/deeplinks';
 
 import { MaterialIconsModule } from 'ionic2-material-icons';
-
+import { EthereumProvider } from '../providers/ethereum/ethereum';
+import { ApiServiceProvider } from '../providers/api-service/api-service';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,7 @@ import { MaterialIconsModule } from 'ionic2-material-icons';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
     MaterialIconsModule
   ],
@@ -60,7 +64,10 @@ import { MaterialIconsModule } from 'ionic2-material-icons';
     SplashScreen,
     Contacts,
     TouchID,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    Deeplinks,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    EthereumProvider,
+    ApiServiceProvider
   ]
 })
 export class AppModule { }
