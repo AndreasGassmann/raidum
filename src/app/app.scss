@@ -18,3 +18,19 @@
 .background--color__gradient {
   background-image: $gradient;
 }
+.background--color__white {
+  background-color: color($colors, white);
+}
+.height__full {
+  height:100vh;
+}
+.font--weight__light {
+  font-weight: 300;
+}
+.background--color__gradient__cut {
+  background: linear-gradient(to bottom right, transparent 0%, transparent 50%, color($colors, white, base) 50%, color($colors, white, base) 100%);
+
+}
+.profile--img {
+  border-radius: 100%;
+}

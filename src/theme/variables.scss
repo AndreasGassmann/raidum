@@ -90,3 +90,4 @@ $colors: (
 @import "noto-sans";
 
 $gradient: linear-gradient(-150deg, color($colors, secondary) 0%, color($colors, primary) 100%);
+$gradient-sm: linear-gradient(-90deg, color($colors, secondary) 0%, color($colors, primary) 100%);

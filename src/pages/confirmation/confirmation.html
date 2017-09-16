@@ -1,12 +1,34 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>confirmation</ion-title>
+<ion-header no-shadow no-border>
+  <ion-navbar color="transparent">
+    <ion-title>Confirmation</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content>
+  <ion-row padding-vertical>
+    <ion-col text-center padding-bottom ion-text color="white">
+      <h5 class="font--weight__light" margin-bottom>YOU'VE SENT</h5>
+      <h1 no-margin>1450 <small>CHF</small></h1>
+      <h5 no-margin>5.021 <small>ETH</small></h5>
+    </ion-col>
+  </ion-row>
+  <ion-row class="background--color__gradient__cut" padding-vertical>
+    <ion-col text-center>
+      <img class="profile--img" src="/assets/img/profile-img.png">
+    </ion-col>
+  </ion-row>
+  <ion-row class="background--color__white" padding-bottom>
+    <ion-col text-center>
+      <h5 no-margin>Andreas Gassmann</h5>
+      <p no-margin>+41 76 123 12 12</p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="background--color__white height__full">
+    <ion-col padding>
+      <button ion-button icon-left full round color="secondary" (click)="openConfirmation()">
+        Done
+      </button>
+    </ion-col>
+  </ion-row>
 </ion-content>
+

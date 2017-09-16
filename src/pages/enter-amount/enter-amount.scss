@@ -1,5 +1,8 @@
 page-enter-amount {
-  ion-header {
-    background-image: $gradient;
+  ion-content {
+    background-image: $gradient-sm;
+  }
+  .placeholder--color__white::-moz-placeholder, .placeholder--color__white::-webkit-input-placeholder {
+    color: #fff;
   }
 }

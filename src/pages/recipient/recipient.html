@@ -1,13 +1,11 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>recipient</ion-title>
+<ion-header no-shadow no-border>
+  <ion-navbar color="transparent">
+    <ion-title>Select Recipient</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <ion-list>
     <ion-list-header>Already on CryptoPay</ion-list-header>
     <ion-item *ngFor="let c of myContacts" (click)="selectRecipient()">
