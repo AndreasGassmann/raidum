@@ -8,14 +8,14 @@
   <ion-row padding-vertical>
     <ion-col text-center padding margin-vertical ion-text color="white">
       <h5 class="font--weight__light" margin-bottom>MY BALANCE</h5>
-      <h1 no-margin margin-top padding-top>1450 <small>CHF</small></h1>
-      <h5 no-margin>5.021 <small>ETH</small></h5>
+      <h1 no-margin margin-top padding-top>{{ balance * ethPrice.ethPrice }} <small>CHF</small></h1>
+      <h5 no-margin>{{ balance }} <small>ETH</small></h5>
     </ion-col>
   </ion-row>
   <ion-row class="background--color__white height__full" padding align-items-center>
     <ion-col text-center>
       <button large margin-bottom ion-button icon-left full round color="primary" (click)="openEnterAmount()">
-            <ion-icon md-name="call_made"></ion-icon>
+            <ion-icon name="md-arrow-round-up"></ion-icon>
             Send
           </button>
       <p padding>OR</p>

@@ -5,4 +5,7 @@ page-enter-amount {
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: color($colors, white)!important;
   }
+  .input--field {
+    font-size: 2em;
+  }
 }

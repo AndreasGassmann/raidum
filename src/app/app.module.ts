@@ -26,6 +26,7 @@ import { MaterialIconsModule } from 'ionic2-material-icons';
 import { EthereumProvider } from '../providers/ethereum/ethereum';
 import { ApiServiceProvider } from '../providers/api-service/api-service';
 import { EthereumPriceProvider } from '../providers/ethereum-price/ethereum-price';
+import { BalanceProvider } from '../providers/balance/balance';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { EthereumPriceProvider } from '../providers/ethereum-price/ethereum-pric
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     EthereumProvider,
     ApiServiceProvider,
-    EthereumPriceProvider
+    EthereumPriceProvider,
+    BalanceProvider
   ]
 })
 export class AppModule { }

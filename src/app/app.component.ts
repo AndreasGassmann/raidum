@@ -9,9 +9,10 @@ import { Connect, SimpleSigner } from 'uport-connect'
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { AuthPage } from '../pages/auth/auth';
+import { OnboardingPage } from '../pages/onboarding/onboarding';
 
 import { EthereumProvider } from '../providers/ethereum/ethereum';
-import { ApiServiceProvider } from '../providers/api-service/api-service';
+import { BalanceProvider } from '../providers/balance/balance';
 
 @Component({
   templateUrl: 'app.html'
@@ -19,22 +20,17 @@ import { ApiServiceProvider } from '../providers/api-service/api-service';
 export class MyApp {
   rootPage: any;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private deeplinks: Deeplinks, private ethProvider: EthereumProvider, private apiService: ApiServiceProvider) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private deeplinks: Deeplinks, private ethProvider: EthereumProvider, private balanceProvider: BalanceProvider) {
     platform.ready().then(() => {
-      this.rootPage = AuthPage;
+      if (JSON.parse(localStorage.getItem('hasOnboarding'))) {
+        this.rootPage = AuthPage;
+      } else {
+        this.rootPage = OnboardingPage;
+        localStorage.setItem('hasOnboarding', JSON.stringify(true));
+      }
 
-      let masterToken = '0xe656324cdea2db0a0c0cf5151fe1f2523f9064d8';
+      this.balanceProvider.updateBalance();
 
-      /*
-            this.apiService.getBalances().map(res => res.json()).subscribe(data => {
-              console.log(data);
-              let balance = 0;
-              data.forEach(d => {
-                balance += d.balance;
-              });
-              console.log(balance);
-            });
-      */
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();

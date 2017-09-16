@@ -4,12 +4,12 @@
       <img class="logo" src="/assets/img/raidum-logo-white.png" />
       <h3 padding ion-text color="white">This App uses uPort Identity.</h3>
       <h5 padding-bottom ion-text color="white"> You need to have uPort installed and a uPort identity created before you can identify yourself.</h5>
-      <button margin-top ion-button icon-left round color="primary">
+      <button margin-top ion-button icon-left round color="primary" (click)="identifyWithUport()">
         Identify with uPort
       </button>
       <ion-row>
         <ion-col text-center>
-          <button ion-button icon-left clear color="white">
+          <button ion-button icon-left clear color="white" (click)="downloadUport()">
             Download uPort
           </button>
         </ion-col>

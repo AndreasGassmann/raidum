@@ -20,7 +20,7 @@ export class SendPage {
   }
 
   openConfirmation() {
-    this.apiService.sendAmount('xxx', 2).subscribe(data => {
+    this.apiService.sendAmount('cf5f6b71649d66c34bec1882d72acccf97437ae0', 2).subscribe(data => {
       console.log(data);
       this.navCtrl.push(ConfirmationPage, {
         contact: this.contact
