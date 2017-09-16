@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { SendPage } from '../send/send';
 
 @Component({
   selector: 'page-send-receive',
@@ -11,4 +12,7 @@ export class SendReceivePage {
 
   }
 
+  openSend() {
+    this.navCtrl.push(SendPage);
+  }
 }

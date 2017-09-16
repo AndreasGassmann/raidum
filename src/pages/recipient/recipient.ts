@@ -2,16 +2,16 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @Component({
-  selector: 'page-send',
-  templateUrl: 'send.html',
+  selector: 'page-recipient',
+  templateUrl: 'recipient.html',
 })
-export class SendPage {
+export class RecipientPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SendPage');
+    console.log('ionViewDidLoad RecipientPage');
   }
 
 }
