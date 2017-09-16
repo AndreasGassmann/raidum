@@ -20,6 +20,11 @@ import { Contacts } from '@ionic-native/contacts';
 import { TouchID } from '@ionic-native/touch-id';
 
 import { MaterialIconsModule } from 'ionic2-material-icons';
+import { Keyboard } from '@ionic-native/keyboard';
+
+import { ViewChild} from '@angular/core';
+
+
 
 
 @NgModule({
@@ -60,6 +65,8 @@ import { MaterialIconsModule } from 'ionic2-material-icons';
     SplashScreen,
     Contacts,
     TouchID,
+    Keyboard,
+    ViewChild,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
