@@ -1,25 +1,30 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the AuthPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { TouchID } from '@ionic-native/touch-id';
 
-@IonicPage()
 @Component({
   selector: 'page-auth',
   templateUrl: 'auth.html',
 })
 export class AuthPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private touchId: TouchID) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AuthPage');
+    this.touchId.isAvailable()
+      .then(
+      res => console.log('TouchID is available!'),
+      err => console.error('TouchID is not available', err)
+      );
+
+    this.touchId.verifyFingerprint('Scan your fingerprint please')
+      .then(
+      res => console.log('Ok', res),
+      err => console.error('Error', err)
+      );
   }
 
 }

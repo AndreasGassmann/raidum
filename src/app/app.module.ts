@@ -12,6 +12,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Contacts } from '@ionic-native/contacts';
+import { TouchID } from '@ionic-native/touch-id';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { Contacts } from '@ionic-native/contacts';
     StatusBar,
     SplashScreen,
     Contacts,
+    TouchID,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
