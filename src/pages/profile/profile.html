@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-navbar>
+<ion-header no-shadow no-border>
+  <ion-navbar color="transparent">
     <ion-title>
       Profile
     </ion-title>
@@ -10,8 +10,14 @@
   <ion-list>
     <ion-list-header>Already on CryptoPay</ion-list-header>
     <ion-item *ngFor="let c of myContacts">
-      <img [src]="sanitizeImage(c.photo)" item-left />{{c.name}} {{c.phoneNumber}}
+      <ion-avatar item-start>
+        <img [src]="sanitizeImage(c.photo)">
+      </ion-avatar>
+      <h2>{{c.name}}</h2>
+      <p>{{c.phoneNumber}}</p>
     </ion-item>
+  </ion-list>
+  <ion-list>
     <ion-list-header>Other contacts</ion-list-header>
   </ion-list>
 </ion-content>
