@@ -11,6 +11,7 @@ import { ConfirmationPage } from '../pages/confirmation/confirmation';
 import { EnterAmountPage } from '../pages/enter-amount/enter-amount';
 import { SendPage } from '../pages/send/send';
 import { RecipientPage } from '../pages/recipient/recipient';
+import { OnboardingPage } from '../pages/onboarding/onboarding';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -29,6 +30,7 @@ import { TouchID } from '@ionic-native/touch-id';
     EnterAmountPage,
     SendPage,
     RecipientPage,
+    OnboardingPage,
     TabsPage
   ],
   imports: [
@@ -46,6 +48,7 @@ import { TouchID } from '@ionic-native/touch-id';
     EnterAmountPage,
     SendPage,
     RecipientPage,
+    OnboardingPage,
     TabsPage
   ],
   providers: [
