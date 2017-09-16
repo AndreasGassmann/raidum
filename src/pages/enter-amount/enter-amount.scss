@@ -2,7 +2,7 @@ page-enter-amount {
   ion-content {
     background-image: $gradient-sm;
   }
-  .placeholder--color__white::-moz-placeholder, .placeholder--color__white::-webkit-input-placeholder {
-    color: #fff;
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: color($colors, white)!important;
   }
 }
