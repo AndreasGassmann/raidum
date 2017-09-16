@@ -7,65 +7,37 @@
 <ion-content>
   <ion-list>
     <ion-list-header>Completed</ion-list-header>
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="/assets/img/profile-img.png">
-      </ion-avatar>
-      <h2>Peter Müller</h2>
-      <p>Sent by you</p>
-      <small>12.12.2017</small>
-      <ion-row item-end padding-right>
-        <ion-col text-right>
-          <h2 color="danger" ion-text>127.12 CHF</h2>
-          <small>0.52 ETH</small>
-        </ion-col>
-      </ion-row>
-      <ion-icon color="danger" padding-right md-name="call_made" item-end></ion-icon>
-    </ion-item>
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="/assets/img/profile-img.png">
-      </ion-avatar>
-      <h2>Peter Müller</h2>
-      <p>Received</p>
-      <small>12.12.2017</small>
-      <ion-row item-end padding-right>
-        <ion-col text-right>
-          <h2 color="success" ion-text>127.12 CHF</h2>
-          <small>0.52 ETH</small>
-        </ion-col>
-      </ion-row>
-      <ion-icon color="success" padding-right md-name="call_received" item-end></ion-icon>
-    </ion-item>
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="/assets/img/profile-img.png">
-      </ion-avatar>
-      <h2>Peter Müller</h2>
-      <p>Received</p>
-      <small>12.12.2017</small>
-      <ion-row item-end padding-right>
-        <ion-col text-right>
-          <h2 color="success" ion-text>127.12 CHF</h2>
-          <small>0.52 ETH</small>
-        </ion-col>
-      </ion-row>
-      <ion-icon color="success" padding-right md-name="call_received" item-end></ion-icon>
-    </ion-item>
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="/assets/img/profile-img.png">
-      </ion-avatar>
-      <h2>Peter Müller</h2>
-      <p>Received</p>
-      <small>12.12.2017</small>
-      <ion-row item-end padding-right>
-        <ion-col text-right>
-          <h2 color="success" ion-text>127.12 CHF</h2>
-          <small>0.52 ETH</small>
-        </ion-col>
-      </ion-row>
-      <ion-icon color="success" padding-right md-name="call_received" item-end></ion-icon>
-    </ion-item>
+    <span *ngFor="let t of transactions">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="/assets/img/profile-img.png">
+        </ion-avatar>
+        <h2>Peter Müller</h2>
+        <p>Sent by you</p>
+        <small>12.12.2017</small>
+        <ion-row item-end padding-right>
+          <ion-col text-right>
+            <h2 color="danger" ion-text>127.12 CHF</h2>
+            <small>{{t.balance}} ETH</small>
+          </ion-col>
+        </ion-row>
+        <ion-icon color="danger" padding-right md-name="call_made" item-end></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="/assets/img/profile-img.png">
+        </ion-avatar>
+        <h2>Peter Müller</h2>
+        <p>Received</p>
+        <small>12.12.2017</small>
+        <ion-row item-end padding-right>
+          <ion-col text-right>
+            <h2 color="success" ion-text>127.12 CHF</h2>
+            <small>{{t.balance}} ETH</small>
+          </ion-col>
+        </ion-row>
+        <ion-icon color="success" padding-right md-name="call_received" item-end></ion-icon>
+      </ion-item>  
+    </span>
   </ion-list>
 </ion-content>

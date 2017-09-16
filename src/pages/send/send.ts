@@ -20,9 +20,11 @@ export class SendPage {
   }
 
   openConfirmation() {
-    this.apiService.sendAmount('xxx', 2).map(res => res.json()).subscribe(data => {
+    this.apiService.sendAmount('xxx', 2).subscribe(data => {
       console.log(data);
-      this.navCtrl.push(ConfirmationPage);
+      this.navCtrl.push(ConfirmationPage, {
+        contact: this.contact
+      });
     });
 
   }

@@ -25,6 +25,7 @@ import { Keyboard } from '@ionic-native/keyboard';
 import { MaterialIconsModule } from 'ionic2-material-icons';
 import { EthereumProvider } from '../providers/ethereum/ethereum';
 import { ApiServiceProvider } from '../providers/api-service/api-service';
+import { EthereumPriceProvider } from '../providers/ethereum-price/ethereum-price';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { ApiServiceProvider } from '../providers/api-service/api-service';
     Keyboard,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     EthereumProvider,
-    ApiServiceProvider
+    ApiServiceProvider,
+    EthereumPriceProvider
   ]
 })
 export class AppModule { }

@@ -25,16 +25,16 @@ export class MyApp {
 
       let masterToken = '0xe656324cdea2db0a0c0cf5151fe1f2523f9064d8';
 
-
-      this.apiService.getBalances().map(res => res.json()).subscribe(data => {
-        console.log(data);
-        let balance = 0;
-        data.forEach(d => {
-          balance += d.balance;
-        });
-        console.log(balance);
-      });
-
+      /*
+            this.apiService.getBalances().map(res => res.json()).subscribe(data => {
+              console.log(data);
+              let balance = 0;
+              data.forEach(d => {
+                balance += d.balance;
+              });
+              console.log(balance);
+            });
+      */
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();

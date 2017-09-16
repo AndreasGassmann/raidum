@@ -19,13 +19,13 @@
   </ion-row>
   <ion-row class="background--color__gradient__cut" padding-vertical>
     <ion-col text-center>
-      <img class="profile--img" src="/assets/img/profile-img.png">
+      <img class="profile--img" src="{{contact?.photoLarge}}">
     </ion-col>
   </ion-row>
   <ion-row class="background--color__white" padding-bottom>
     <ion-col text-center>
-      <h5 no-margin>Andreas Gassmann</h5>
-      <p no-margin>16.09.17 16:24</p>
+      <h5 no-margin>{{contact?.name}}</h5>
+      <p no-margin>{{contact?.date}}</p>
     </ion-col>
   </ion-row>
   <ion-row class="background--color__white height__full">
