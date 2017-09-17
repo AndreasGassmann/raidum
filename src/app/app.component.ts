@@ -31,10 +31,10 @@ export class MyApp {
         localStorage.setItem('hasOnboarding', JSON.stringify(true));
       }
 
-      this.balanceProvider.updateBalance();/*
+      this.balanceProvider.updateBalance();
       this.balanceProvider.balance.subscribe(value => {
-        console.log(value);
-        if (value === 0 && this.balance < value) { // Received new money
+        if (value === 0) return;
+        if (this.balance < value) { // Received new money
           // modal
           let confirmModal = this.modalCtrl.create(ConfirmationPage, {
             isSending: false,
@@ -43,7 +43,7 @@ export class MyApp {
           confirmModal.present();
         }
         this.balance = value;
-      });*/
+      });
 
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

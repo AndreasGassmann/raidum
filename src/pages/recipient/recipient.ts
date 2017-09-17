@@ -47,17 +47,19 @@ export class RecipientPage {
       photoLarge: 'https://randomuser.me/api/portraits/women/33.jpg',
       date: new Date()
     }, {
-      name: 'Stefan Meier',
+      name: 'Pascal',
       phoneNumber: '+41 79 071 51 49',
       photo: 'https://randomuser.me/api/portraits/med/men/53.jpg',
       photoLarge: 'https://randomuser.me/api/portraits/men/53.jpg',
-      date: new Date()
+      date: new Date(),
+      toAddress: '0x057bba5323fba4e721802877a2e4fad2b5a6ef9c'
     }, {
-      name: 'Jack Bauch',
+      name: 'Andreas',
       phoneNumber: '+41 79 212 47 04',
       photo: 'https://randomuser.me/api/portraits/med/men/82.jpg',
       photoLarge: 'https://randomuser.me/api/portraits/men/82.jpg',
-      date: new Date()
+      date: new Date(),
+      toAddress: '0x43373da7e642667e3d6d8d7adeef75dc79d5330c'
     }, {
       name: 'Michaela Lewis',
       phoneNumber: '+41 79 212 47 04',

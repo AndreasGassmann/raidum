@@ -29,7 +29,7 @@ export class ApiServiceProvider {
   }
 
   sendAmount(toAddress, amount) {
-    return this.http.post('http://raiden.cloudapp.net:' + this.activeNode.port + '/api/1/transfers/0xe656324cdea2db0a0c0cf5151fe1f2523f9064d8/0x' + toAddress, { amount: amount }).map(res => res.json());
+    return this.http.post('http://raiden.cloudapp.net:' + this.activeNode.port + '/api/1/transfers/0xe656324cdea2db0a0c0cf5151fe1f2523f9064d8/' + toAddress, { amount: amount }).map(res => res.json());
   }
 
   getHistory(channel) {
