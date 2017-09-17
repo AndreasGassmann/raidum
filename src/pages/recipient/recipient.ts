@@ -11,10 +11,14 @@ import { SendPage } from '../send/send';
 })
 export class RecipientPage {
 
+  amount: number;
+
   myContacts: any;
   myOtherContacts: any;
 
-  constructor(public navCtrl: NavController, private contacts: Contacts, private sanitizer: DomSanitizer, private platform: Platform) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private contacts: Contacts, private sanitizer: DomSanitizer, private platform: Platform) {
+    this.amount = this.navParams.get('amount');
+
     // if (this.platform.is('cordova')) {
     /*
     let fields: ContactFieldType[] = ["displayName", "addresses"];
@@ -109,6 +113,7 @@ export class RecipientPage {
 
   selectRecipient(c) {
     this.navCtrl.push(SendPage, {
+      amount: this.amount,
       contact: c
     });
   }

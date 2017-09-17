@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, ModalController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Deeplinks } from '@ionic-native/deeplinks';
@@ -10,6 +10,7 @@ import { Connect, SimpleSigner } from 'uport-connect'
 import { TabsPage } from '../pages/tabs/tabs';
 import { AuthPage } from '../pages/auth/auth';
 import { OnboardingPage } from '../pages/onboarding/onboarding';
+import { ConfirmationPage } from '../pages/confirmation/confirmation';
 
 import { EthereumProvider } from '../providers/ethereum/ethereum';
 import { BalanceProvider } from '../providers/balance/balance';
@@ -19,8 +20,9 @@ import { BalanceProvider } from '../providers/balance/balance';
 })
 export class MyApp {
   rootPage: any;
+  balance: number = Number.MAX_SAFE_INTEGER;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private deeplinks: Deeplinks, private ethProvider: EthereumProvider, private balanceProvider: BalanceProvider) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private deeplinks: Deeplinks, private ethProvider: EthereumProvider, private balanceProvider: BalanceProvider, private modalCtrl: ModalController) {
     platform.ready().then(() => {
       if (JSON.parse(localStorage.getItem('hasOnboarding'))) {
         this.rootPage = AuthPage;
@@ -29,7 +31,19 @@ export class MyApp {
         localStorage.setItem('hasOnboarding', JSON.stringify(true));
       }
 
-      this.balanceProvider.updateBalance();
+      this.balanceProvider.updateBalance();/*
+      this.balanceProvider.balance.subscribe(value => {
+        console.log(value);
+        if (value === 0 && this.balance < value) { // Received new money
+          // modal
+          let confirmModal = this.modalCtrl.create(ConfirmationPage, {
+            isSending: false,
+            amount: (value - this.balance)
+          });
+          confirmModal.present();
+        }
+        this.balance = value;
+      });*/
 
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

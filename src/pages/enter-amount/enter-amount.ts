@@ -29,6 +29,8 @@ export class EnterAmountPage {
   }
 
   openRecipient() {
-    this.navCtrl.push(RecipientPage);
+    this.navCtrl.push(RecipientPage, {
+      amount: this.chfPrice / this.ethPrice.ethPrice
+    });
   }
 }

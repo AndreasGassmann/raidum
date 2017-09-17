@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ConfirmationPage } from '../confirmation/confirmation';
 
 import { ApiServiceProvider } from '../../providers/api-service/api-service';
+import { EthereumPriceProvider } from '../../providers/ethereum-price/ethereum-price';
 
 @Component({
   selector: 'page-send',
@@ -10,9 +11,11 @@ import { ApiServiceProvider } from '../../providers/api-service/api-service';
 })
 export class SendPage {
   contact;
+  amount: number = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private apiService: ApiServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private apiService: ApiServiceProvider, public ethPrice: EthereumPriceProvider) {
     this.contact = this.navParams.get('contact');
+    this.amount = Math.max(1, Math.round(this.navParams.get('amount')));
   }
 
   ionViewDidLoad() {
@@ -20,10 +23,11 @@ export class SendPage {
   }
 
   openConfirmation() {
-    this.apiService.sendAmount('cf5f6b71649d66c34bec1882d72acccf97437ae0', 2).subscribe(data => {
+    this.apiService.sendAmount('cf5f6b71649d66c34bec1882d72acccf97437ae0', this.amount).subscribe(data => {
       console.log(data);
       this.navCtrl.push(ConfirmationPage, {
-        contact: this.contact
+        contact: this.contact,
+        amount: this.amount
       });
     });
 
