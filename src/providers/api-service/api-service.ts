@@ -19,7 +19,7 @@ export class ApiServiceProvider {
     port: '82'
   }
 
-  activeNode = this.node1;
+  activeNode = this.node0;
   constructor(public http: Http) {
     console.log('Hello ApiServiceProvider Provider');
   }
