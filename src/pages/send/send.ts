@@ -32,7 +32,8 @@ export class SendPage {
       console.log(data);
       this.navCtrl.push(ConfirmationPage, {
         contact: this.contact,
-        amount: this.amount
+        amount: this.amount,
+        isSending: true
       });
     });
 

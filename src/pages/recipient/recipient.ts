@@ -116,7 +116,8 @@ export class RecipientPage {
   selectRecipient(c) {
     this.navCtrl.push(SendPage, {
       amount: this.amount,
-      contact: c
+      contact: c,
+      isSending: true
     });
   }
 }

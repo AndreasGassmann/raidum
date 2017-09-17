@@ -23,7 +23,7 @@
   <ion-row class="background--color__white" padding-bottom>
     <ion-col text-center>
       <h5 no-margin>{{contact?.name}}</h5>
-      <p no-margin>{{contact?.date}}</p>
+      <p no-margin>{{contact?.date | date:'medium' }}</p>
     </ion-col>
   </ion-row>
   <ion-row class="background--color__white height__full">

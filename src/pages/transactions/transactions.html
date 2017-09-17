@@ -8,31 +8,31 @@
   <ion-list>
     <ion-list-header>Completed</ion-list-header>
     <span *ngFor="let t of transactions">
-      <ion-item>
+      <ion-item *ngIf="t.balance % 2 === 1">
         <ion-avatar item-start>
-          <img src="/assets/img/profile-img.png">
+          <img [src]="getRandomImage(3)">
         </ion-avatar>
         <h2>Peter Müller</h2>
         <p>Sent by you</p>
-        <small>12.12.2017</small>
+        <small>12.09.2017</small>
         <ion-row item-end padding-right>
           <ion-col text-right>
-            <h2 color="danger" ion-text>127.12 CHF</h2>
+            <h2 color="danger" ion-text>{{t.balance * ethPrice.ethPrice}} CHF</h2>
             <small>{{t.balance}} ETH</small>
           </ion-col>
         </ion-row>
         <ion-icon color="danger" padding-right md-name="call_made" item-end></ion-icon>
       </ion-item>
-      <ion-item>
+      <ion-item *ngIf="t.balance % 2 === 0">
         <ion-avatar item-start>
-          <img src="/assets/img/profile-img.png">
+          <img [src]="getRandomImage(4)">
         </ion-avatar>
-        <h2>Peter Müller</h2>
+        <h2>Stefan Frei</h2>
         <p>Received</p>
-        <small>12.12.2017</small>
+        <small>12.09.2017</small>
         <ion-row item-end padding-right>
           <ion-col text-right>
-            <h2 color="success" ion-text>127.12 CHF</h2>
+            <h2 color="success" ion-text>{{t.balance * ethPrice.ethPrice}} CHF</h2>
             <small>{{t.balance}} ETH</small>
           </ion-col>
         </ion-row>

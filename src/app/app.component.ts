@@ -67,8 +67,8 @@ export class MyApp {
 
           credentials.receive(resToken).then(res => {
             console.log(res);
-            alert('dbkwlv ' + JSON.stringify(res));
-            localStorage.setItem('userInfo', JSON.stringify(res));
+            //alert('dbkwlv ' + JSON.stringify(res));
+            //localStorage.setItem('userInfo', JSON.stringify(res));
 
             this.rootPage = TabsPage;
             localStorage.setItem('userInfo', JSON.stringify(res));
