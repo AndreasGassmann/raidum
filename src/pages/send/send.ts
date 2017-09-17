@@ -38,4 +38,8 @@ export class SendPage {
 
   }
 
+  goBack() {
+    this.navCtrl.pop();
+  }
+
 }

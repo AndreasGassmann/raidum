@@ -10,7 +10,7 @@
     <ion-list-header>Already on Radium</ion-list-header>
     <ion-item *ngFor="let c of myContacts" (click)="selectRecipient(c)">
       <ion-avatar item-start>
-        <img [src]="sanitizeImage(c.photo)">
+        <img [src]="c.photo">
       </ion-avatar>
       <h2>{{c.name}}</h2>
       <p>{{c.phoneNumber}}</p>
@@ -20,7 +20,7 @@
     <ion-list-header>Other contacts</ion-list-header>
     <ion-item *ngFor="let c of myOtherContacts" (click)="selectRecipient(c)">
       <ion-avatar item-start>
-        <img [src]="sanitizeImage(c.photo)">
+        <img [src]="c.photo">
       </ion-avatar>
       <h2>{{c.name}}</h2>
       <p>{{c.phoneNumber}}</p>

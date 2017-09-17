@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Platform, ModalController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, ModalController, Tabs } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Deeplinks } from '@ionic-native/deeplinks';
@@ -21,6 +21,7 @@ import { BalanceProvider } from '../providers/balance/balance';
 export class MyApp {
   rootPage: any;
   balance: number = Number.MAX_SAFE_INTEGER;
+  @ViewChild("paymentTabs") tabs: Tabs;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private deeplinks: Deeplinks, private ethProvider: EthereumProvider, private balanceProvider: BalanceProvider, private modalCtrl: ModalController) {
     platform.ready().then(() => {
@@ -67,6 +68,18 @@ export class MyApp {
           credentials.receive(resToken).then(res => {
             console.log(res);
             alert('dbkwlv ' + JSON.stringify(res));
+            localStorage.setItem('userInfo', JSON.stringify(res));
+
+            this.rootPage = TabsPage;
+            localStorage.setItem('userInfo', JSON.stringify(res));
+
+            this.rootPage = TabsPage;
+            setTimeout(() => {
+              console.log("tabs");
+              this.tabs.select(2);
+            }, 500);
+
+            /*
 
             const uport = new Connect('raidum', {
               clientId: '2odxodKieqfR5g9xPw5hZJZjNo3LNyNuT5z',
@@ -98,7 +111,8 @@ export class MyApp {
 
             // const credentials = res.verified
             const name = res.name
-          })
+            */
+          });
         } else {
           console.log('no match!')
         }
