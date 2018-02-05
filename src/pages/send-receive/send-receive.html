@@ -8,8 +8,7 @@
   <ion-row padding-vertical>
     <ion-col text-center padding margin-vertical ion-text color="white">
       <h5 class="font--weight__light" margin-bottom>MY BALANCE</h5>
-      <h1 no-margin margin-top padding-top>{{ balance * ethPrice.ethPrice | number : '1.2-4' }} <small>CHF</small></h1>
-      <h5 no-margin>{{ balance | number : '1.2-4' }} <small>ETH</small></h5>
+      <h1 no-margin margin-top padding-top>{{ balance | number : '1.2-4' }} <small>CHFT</small></h1>
     </ion-col>
   </ion-row>
   <ion-row class="background--color__white height__full" padding align-items-center>
@@ -31,13 +30,13 @@
   <ion-navbar>
     <ion-row>
       <ion-col>
-        <button ion-button icon-left full round color="white">
+        <button (click)="setUser(1)" ion-button icon-left full round color="white">
           <ion-icon name="md-bluetooth"></ion-icon>
           USE Bluetooth
         </button>
       </ion-col>
       <ion-col>
-        <button ion-button icon-left full round color="white">
+        <button (click)="setUser(2)" ion-button icon-left full round color="white">
           <ion-icon md-name="nfc"></ion-icon>
           Use NFC
         </button>

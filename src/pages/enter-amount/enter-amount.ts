@@ -28,9 +28,13 @@ export class EnterAmountPage {
 
   }
 
+  change(ev) {
+    this.chfPrice = ev;
+  }
+
   openRecipient() {
     this.navCtrl.push(RecipientPage, {
-      amount: this.chfPrice / this.ethPrice.ethPrice
+      amount: this.chfPrice
     });
   }
 }

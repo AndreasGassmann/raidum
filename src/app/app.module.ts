@@ -24,9 +24,10 @@ import { Keyboard } from '@ionic-native/keyboard';
 
 import { MaterialIconsModule } from 'ionic2-material-icons';
 import { EthereumProvider } from '../providers/ethereum/ethereum';
-import { ApiServiceProvider } from '../providers/api-service/api-service';
 import { EthereumPriceProvider } from '../providers/ethereum-price/ethereum-price';
 import { BalanceProvider } from '../providers/balance/balance';
+import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
+const config: SocketIoConfig = { url: 'http://193.70.42.70:4444', options: {} };
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { BalanceProvider } from '../providers/balance/balance';
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    MaterialIconsModule
+    MaterialIconsModule,
+    SocketIoModule.forRoot(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -71,7 +73,6 @@ import { BalanceProvider } from '../providers/balance/balance';
     Keyboard,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     EthereumProvider,
-    ApiServiceProvider,
     EthereumPriceProvider,
     BalanceProvider
   ]

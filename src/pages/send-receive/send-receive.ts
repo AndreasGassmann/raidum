@@ -29,4 +29,10 @@ export class SendReceivePage {
     // uPort object creation
     // Keys are from the app manager
   }
+
+  setUser(id) {
+    console.log(id);
+    localStorage.setItem('id', id);
+    this.balanceProvider.updateBalance();
+  }
 }

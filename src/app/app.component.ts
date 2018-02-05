@@ -15,16 +15,48 @@ import { ConfirmationPage } from '../pages/confirmation/confirmation';
 import { EthereumProvider } from '../providers/ethereum/ethereum';
 import { BalanceProvider } from '../providers/balance/balance';
 
+import { Socket } from 'ng-socket-io';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage: any;
-  balance: number = Number.MAX_SAFE_INTEGER;
+  balance: number = 0;
   @ViewChild("paymentTabs") tabs: Tabs;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private deeplinks: Deeplinks, private ethProvider: EthereumProvider, private balanceProvider: BalanceProvider, private modalCtrl: ModalController) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private deeplinks: Deeplinks, private ethProvider: EthereumProvider, private balanceProvider: BalanceProvider, private modalCtrl: ModalController, private socket: Socket) {
     platform.ready().then(() => {
+
+      this.socket.connect();
+      this.socket.on('transactionSuccess', (data) => {
+        console.log('data', data);
+        console.log(this.balance);
+      
+        let id = localStorage.getItem('id');
+        if (data.receiverID == id) {
+          let confirmModal = this.modalCtrl.create(ConfirmationPage, {
+            isSending: false,
+            amount: data.amount
+          });
+          this.balance = Number(this.balance) + Number(data.amount);
+          console.log(this.balance);
+          this.balanceProvider.balance.next(this.balance);
+          confirmModal.present();
+        }
+      })
+      this.socket.on('balances', data => {
+        let id = localStorage.getItem('id');
+        let balance = data.find(b => {
+          return b.id == Number(id);
+        });
+        if (balance) {
+          console.log(balance);
+          this.balanceProvider.balance.next(parseInt(balance.balance));
+        }
+      });
+  
+
       if (JSON.parse(localStorage.getItem('hasOnboarding'))) {
         this.rootPage = AuthPage;
       } else {
@@ -34,15 +66,8 @@ export class MyApp {
 
       this.balanceProvider.updateBalance();
       this.balanceProvider.balance.subscribe(value => {
+        console.log('balance updated', value);
         if (value === 0) return;
-        if (this.balance < value) { // Received new money
-          // modal
-          let confirmModal = this.modalCtrl.create(ConfirmationPage, {
-            isSending: false,
-            amount: (value - this.balance)
-          });
-          confirmModal.present();
-        }
         this.balance = value;
       });
 

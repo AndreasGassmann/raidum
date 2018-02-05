@@ -11,14 +11,13 @@
       <h5 class="font--weight__light" margin-bottom>SELECT AMOUNT</h5>
       <ion-row align-items-center margin-top padding-top>
         <ion-col col-4 offset-3>
-          <ion-input [(ngModel)]="chfPrice" #focusInput text-right class="placeholder--color__white input--field" color="white" type="number"
-            placeholder="Amount"></ion-input>
+          <ion-input (input)='change($event.target.value)' [ngModel]="chfPrice" #focusInput text-right class="placeholder--color__white input--field" color="white" type="number" step="0.01"
+            ></ion-input>
         </ion-col>
         <ion-col col-2>
-          <h1 no-margin><small>CHF</small></h1>
+          <h1 no-margin><small>CHFT</small></h1>
         </ion-col>
       </ion-row>
-      <h5 no-margin>{{ chfPrice / ethPrice.ethPrice | number : '1.2-4' }} <small>ETH</small></h5>
     </ion-col>
   </ion-row>
   <ion-row class="background--color__white height__full" padding-vertical>

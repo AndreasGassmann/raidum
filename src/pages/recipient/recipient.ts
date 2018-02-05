@@ -49,8 +49,8 @@ export class RecipientPage {
     }, {
       name: 'Pascal',
       phoneNumber: '+41 79 071 51 49',
-      photo: 'https://randomuser.me/api/portraits/med/men/53.jpg',
-      photoLarge: 'https://randomuser.me/api/portraits/men/53.jpg',
+      photo: 'https://randomuser.me/api/portraits/med/men/54.jpg',
+      photoLarge: 'https://randomuser.me/api/portraits/men/54.jpg',
       date: new Date(),
       toAddress: '0x057bba5323fba4e721802877a2e4fad2b5a6ef9c'
     }, {

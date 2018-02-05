@@ -74,9 +74,6 @@
     </platform>
     <icon src="resources/ios/icon/icon-small@3x.png" />
     <allow-navigation href="http://172.30.4.228:8100" />
-    <engine name="android" spec="^6.2.3" />
-    <engine name="ios" spec="^4.5.0" />
-    <plugin name="cordova-plugin-console" spec="^1.0.7" />
     <plugin name="cordova-plugin-contacts" spec="^2.3.1" />
     <plugin name="cordova-plugin-device" spec="^1.1.6" />
     <plugin name="cordova-plugin-inappbrowser" spec="^1.7.1" />

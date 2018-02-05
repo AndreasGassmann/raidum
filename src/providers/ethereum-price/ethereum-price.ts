@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class EthereumPriceProvider {
-  ethPrice: number = 244.98;
+  ethPrice: number = 1050;
 
   constructor(public http: Http) { }
 }
